@@ -27,8 +27,8 @@ st.markdown(
 def load_font(size=48):
     return ImageFont.truetype("NotoSansSC-VariableFont_wght.ttf", size)
 
-font_large = load_font(72)
-font_small = load_font(40)
+font_large = ImageFont.truetype("NotoSansSC-Bold.otf", 72)  # 粗体桌号
+font_small = ImageFont.truetype("NotoSansSC-Regular.otf", 40)  # 常规店名
 
 # 自动裁剪透明留白的 logo
 def trim_logo(img):
@@ -54,7 +54,7 @@ labels_per_page = 9
 cols, rows = 3, 3
 
 # 店铺文字输入
-custom_text = st.text_input("✏️ 输入店铺名称", "欢迎光临")
+custom_text = st.text_input("✏️ 输入店铺名称", "xxx火锅店")
 
 # 文字位置调节（滑块）
 st.markdown("🎯 调整文字位置：")
@@ -79,7 +79,7 @@ def create_label(qr_img, desk_name):
     draw.text((desk_x, desk_y), desk_name, font=font_large, fill="black")
 
     # 店铺文字
-    draw.text((custom_x, custom_y), custom_text, font=font_small, fill="gray")
+    draw.text((custom_x, custom_y), custom_text, font=font_small, fill="black")
 
     # Logo
     if logo_img:
