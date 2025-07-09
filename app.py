@@ -22,20 +22,11 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# 加载字体
+# 加载支持中文的字体
 @st.cache_data
 def load_font(size=48):
-    font_paths = [
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
-        "C:\\Windows\\Fonts\\arialbd.ttf"
-    ]
-    for path in font_paths:
-        try:
-            return ImageFont.truetype(path, size)
-        except:
-            continue
-    return ImageFont.load_default()
+    return ImageFont.truetype("NotoSansSC-VariableFont_wght.ttf", size)
+
 font_large = load_font(72)
 font_small = load_font(40)
 
