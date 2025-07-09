@@ -1,5 +1,5 @@
 import streamlit as st
-from PIL import Image, ImageDraw, ImageFont
+from PIL import ImageFontfrom PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
 import os
 
@@ -27,8 +27,10 @@ st.markdown(
 def load_font(size=48):
     return ImageFont.truetype("NotoSansSC-VariableFont_wght.ttf", size)
 
-font_large = ImageFont.truetype("NotoSansSC-Bold.otf", 72)  # 粗体桌号
-font_small = ImageFont.truetype("NotoSansSC-Regular.otf", 40)  # 常规店名
+
+
+font_large = ImageFont.truetype("static/NotoSansSC-Bold.ttf", 72)  # 粗体桌号
+font_small = ImageFont.truetype("static/NotoSansSC-Regular.ttf", 40)  # 常规店名
 
 # 自动裁剪透明留白的 logo
 def trim_logo(img):
